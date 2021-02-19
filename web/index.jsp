@@ -49,25 +49,28 @@
         </div> -->
         
         <div class="apple">
-        <img src="images/apple2.png" alt="Picture of food in a bowl">
+        <img src="images/apple2.png" alt="">
         <h3> Apple </h3>
        <p>Claim Apple's Flagship, the iPhone 12 Pro Max</p>
        <p>Type "Apple" on the field bar above to claim</p>
         </div>
         
         <div class="samsung">
-        <img src="images/samsung3.png" alt="Picture of food in a bowl" >
+        <img src="images/samsung3.png" alt="" >
        <h3> Samsung </h3>
        <p>Claim Samsung's Flagship, the Galaxy S21 Ultra</p>
        <p>Type "Samsung" on the field bar above to claim</p>
        </div>
        
        <div class="xiaomi">
-        <img src="images/xiaomi2.png" alt="Picture of food in a bowl" class="xiaomi">
+        <img src="images/xiaomi2.png" alt="" class="xiaomi">
         <h3> Xiaomi </h3>
        <p>Claim Xiaomi's Flagship, the MI 10T Ultra</p>
        <p>Type "Xiaomi" on the field bar above to claim</p>
         </div>
+        
+        
+        
     </section>
     
     <h1 class = "breaker"><span>Bundled Accessories</span></h1>

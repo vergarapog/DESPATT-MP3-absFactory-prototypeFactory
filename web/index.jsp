@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+   <%@ page import="utility.prototype.db.*" %> 
+   <%@ page import="java.sql.*" %> 
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +45,9 @@
     </div>
     <br>
     <h1 class = "breaker"><span> Available Rewards</span></h1>
+    
+    
+    
 
     <section class="authentic">
         <!-- <div class="right-col">

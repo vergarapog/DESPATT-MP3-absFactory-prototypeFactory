@@ -17,6 +17,7 @@ public class MyConnection implements CloneableConnection {
     }
 	
 	
+	@Override
 	public Connection getMyConnection() {
 		return connection;
 	}

@@ -7,10 +7,13 @@ public class ConnectionPrototypeFactory {
 
 	private static final Map<String, CloneableConnection> prototypes = new HashMap<>();
 
-	//eager loading/instantiation
+	//only 1 prototype, which is the class holder of the expensive connection object
     static {
     	System.out.println("inside Factory static");
-        prototypes.put("myConnection", new MyConnection());
+    	
+        prototypes.put("CloneableConnectionHolder", new CloneableConnectionHolder());
+        
+        
          
     }
 

@@ -1,23 +1,55 @@
 package model.accessory;
 
-public class AppleAccessory extends Accessory {
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import utility.prototype.db.*;
+
+
+public class AppleAccessory extends Accessory implements DBOps {
 	
 	public AppleAccessory() {
-		this.setProdName();
-		this.setImgSrc1();
+			this.setDetails();
+	}
+	
+private Connection getClonedConnection() {
+		
+		CloneableConnection myCon = ConnectionPrototypeFactory.getPrototype("CloneableConnectionHolder");
+		
+		return myCon.getMyConnection();
+		
+	}
+	
+	@Override
+	public void setDetails() {
+		
+		ResultSet rs = null;
+		
+		try {
+			Connection con = this.getClonedConnection();
+			PreparedStatement pstmnt = con.prepareStatement(GET_ACCESSORY);
+			pstmnt.setString(1, "%" + "apple" + "%");
+			
+			rs = pstmnt.executeQuery();
+			
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		
+		try {
+			while(rs.next()) {
+				this.prodName = rs.getString(2);
+				this.imgSrc1 = rs.getString(5);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
-	@Override
-	public void setProdName() {
-		// TODO Auto-generated method stub
-		this.prodName = "Apple Airpods Pro";
-	}
-
-	@Override
-	public void setImgSrc1() {
-		// TODO Auto-generated method stub
-		this.imgSrc1 = "images/accessories/apple/appleaccs.jpg";
-	}
 
 	@Override
 	public String getAccsProdName() {

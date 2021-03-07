@@ -1,23 +1,53 @@
 package model.accessory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class XiaomiAccessory extends Accessory {
+import utility.prototype.db.*;
+public class XiaomiAccessory extends Accessory implements DBOps {
 	
 	public XiaomiAccessory() {
-		this.setProdName();
-		this.setImgSrc1();
+		this.setDetails();
+	}
+	
+private Connection getClonedConnection() {
+		
+		CloneableConnection myCon = ConnectionPrototypeFactory.getPrototype("CloneableConnectionHolder");
+		
+		return myCon.getMyConnection();
+		
+	}
+	
+	@Override
+	public void setDetails() {
+		
+		ResultSet rs = null;
+		
+		try {
+			Connection con = this.getClonedConnection();
+			PreparedStatement pstmnt = con.prepareStatement(GET_ACCESSORY);
+			pstmnt.setString(1, "%" + "xiaomi" + "%");
+			
+			rs = pstmnt.executeQuery();
+			
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		
+		try {
+			while(rs.next()) {
+				this.prodName = rs.getString(2);
+				this.imgSrc1 = rs.getString(5);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
-	@Override
-	public void setProdName() {
-		// TODO Auto-generated method stub
-		this.prodName = "Xiaomi Free Buds";
-	}
 
-	@Override
-	public void setImgSrc1() {
-		// TODO Auto-generated method stub
-		this.imgSrc1 = "images/accessories/xiaomi/xiaomiaccs.jpg";
-	}
 
 	@Override
 	public String getAccsProdName() {

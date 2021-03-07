@@ -1,22 +1,53 @@
 package model.accessory;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class SamsungAccessory extends Accessory {
+import utility.prototype.db.*;
+
+public class SamsungAccessory extends Accessory implements DBOps {
 	
 	public SamsungAccessory() {
-		this.setProdName();
-		this.setImgSrc1();
+		this.setDetails();
 	}
 
-	@Override
-	public void setProdName() {
-		// TODO Auto-generated method stub
-		this.prodName = "Samsung Galaxy Buds";
-	}
+	
 
+private Connection getClonedConnection() {
+		
+		CloneableConnection myCon = ConnectionPrototypeFactory.getPrototype("CloneableConnectionHolder");
+		
+		return myCon.getMyConnection();
+		
+	}
+	
 	@Override
-	public void setImgSrc1() {
-		// TODO Auto-generated method stub
-		this.imgSrc1 = "images/accessories/samsung/samsungaccs2.jpg";
+	public void setDetails() {
+		
+		ResultSet rs = null;
+		
+		try {
+			Connection con = this.getClonedConnection();
+			PreparedStatement pstmnt = con.prepareStatement(GET_ACCESSORY);
+			pstmnt.setString(1, "%" + "samsung" + "%");
+			
+			rs = pstmnt.executeQuery();
+			
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		
+		try {
+			while(rs.next()) {
+				this.prodName = rs.getString(2);
+				this.imgSrc1 = rs.getString(5);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Override

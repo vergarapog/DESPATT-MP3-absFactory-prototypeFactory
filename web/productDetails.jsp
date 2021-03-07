@@ -55,12 +55,12 @@
 					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> </div>
 					<hr>
 					<div class="product-price"> P <jsp:getProperty name="prod" property="price"/></div>
-					<div class="product-stock">In Stock - 100% discount for 5 year platinum members.</div>
+					
 					<hr>
 					<div class="btn-group cart">
 					<form action="claimsuccess.jsp" method="post">
 						<button type="submit" class="btn btn-success">
-							Claim Reward
+							Purchase
 						</button>
 						</form>
 					</div>

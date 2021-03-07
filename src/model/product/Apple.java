@@ -1,26 +1,71 @@
 package model.product;
 
-import model.accessory.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class Apple extends Product {
+import model.accessory.*;
+import utility.AccessoryFactory;
+import utility.ProductFactory;
+import utility.prototype.db.*;
+
+
+public class Apple extends Product implements DBOps {
 	
 	private Accessory accessory;
 	
 	public Apple() {
-		this.setProdName();
-		this.setImgSrc1();
-		this.setImgSrc2();
-		this.setImgSrc3();	
-		this.setImgSrc4();
-		this.setPrice();
-		this.setShortDesc();
-		this.setDisplay();
-		this.setCameras();
-		this.setCpu();
-		this.setRam();
-		this.setSecMemory();
 		
+		this.setDetails();
+	
 		
+	}
+	
+	private Connection getClonedConnection() {
+		
+		CloneableConnection myCon = ConnectionPrototypeFactory.getPrototype("CloneableConnectionHolder");
+		
+		return myCon.getMyConnection();
+		
+	}
+	
+	@Override
+	public void setDetails() {
+		
+		ResultSet rs = null;
+		
+		try {
+			Connection con = this.getClonedConnection();
+			PreparedStatement pstmnt = con.prepareStatement(GET_PRODUCT);
+			pstmnt.setString(1, "%" + "apple" + "%");
+			
+			rs = pstmnt.executeQuery();
+			
+		} catch (SQLException sqle) {
+			sqle.printStackTrace();
+		}
+		
+		try {
+			while(rs.next()) {
+				this.prodName = rs.getString(2);
+				this.brand = rs.getString(3);
+				this.imgSrc1 = rs.getString(5);
+				this.imgSrc2 = rs.getString(6);
+				this.imgSrc3 = rs.getString(7);
+				this.imgSrc4 = rs.getString(8);
+				this.price = rs.getDouble(9);
+				this.shortDesc = rs.getString(10);
+				this.display = rs.getString(11);
+				this.cameras = rs.getString(12);
+				this.cpu = rs.getString(13);
+				this.ram = rs.getString(14);
+				this.secMemory = rs.getString(15);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -45,80 +90,7 @@ public class Apple extends Product {
 		return this.accessory.getAccsImgSrc1(); //gets accessory image
 	}
 
-	@Override
-	public void setProdName() {
-		this.prodName = "iPhone 12 Pro Max";
-	}
-
-	@Override
-	public void setImgSrc1() {
-		// TODO Auto-generated method stub
-		this.imgSrc1 = "images/apple/apple1.jpg";
-	}
-
-	@Override
-	public void setImgSrc2() {
-		// TODO Auto-generated method stub
-		this.imgSrc2 = "images/apple/apple2.jpg";
-
-	}
-
-	@Override
-	public void setImgSrc3() {
-		// TODO Auto-generated method stub
-		this.imgSrc3 = "images/apple/apple3.jpg";
-
-	}
-
-	@Override
-	public void setImgSrc4() {
-		// TODO Auto-generated method stub
-		this.imgSrc4 = "images/apple/apple4.jpg";
-
-	}
-
-	@Override
-	public void setPrice() {
-		this.price = 70000;
-	}
-
-	@Override
-	public void setShortDesc() {
-		// TODO Auto-generated method stub
-		this.shortDesc = 
-				"5G goes Pro. A14 Bionic rockets past every other smartphone chip. The Pro camera system takes low-light photography to the next level, with an even bigger jump on iPhone 12 Pro Max. And Ceramic Shield delivers four times better drop performance.";
-		
-	}
-
-	@Override
-	public void setDisplay() {
-		// TODO Auto-generated method stub
-		this.display = "Super Retina Display XDR 60Hz";
-	}
-
-	@Override
-	public void setCameras() {
-		// TODO Auto-generated method stub
-		this.cameras = "16mp Ultrawide Lens, 12mp Main Lens, 16mp Zoom Lens";
-	}
-
-	@Override
-	public void setCpu() {
-		// TODO Auto-generated method stub
-		this.cpu = "Apple A14 Bionic";
-	}
-
-	@Override
-	public void setRam() {
-		// TODO Auto-generated method stub
-		this.ram = "6gb RAM";
-	}
-
-	@Override
-	public void setSecMemory() {
-		// TODO Auto-generated method stub
-		this.secMemory = "256gb Memory";
-	}
+	
 
 	@Override
 	public String getProdName() {
@@ -191,5 +163,13 @@ public class Apple extends Product {
 		// TODO Auto-generated method stub
 		return secMemory;
 	}
+
+	@Override
+	public String getBrand() {
+		// TODO Auto-generated method stub
+		return brand;
+	}
+
+	
 
 }

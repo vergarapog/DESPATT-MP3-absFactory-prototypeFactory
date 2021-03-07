@@ -2,11 +2,13 @@ package model.product;
 
 import model.accessory.*;
 
+
 import java.io.Serializable;
 
 public abstract class Product implements Serializable {
 
 	protected String prodName;
+	protected String brand;
 	protected String imgSrc1;
 	protected String imgSrc2;
 	protected String imgSrc3;
@@ -25,21 +27,14 @@ public abstract class Product implements Serializable {
 	public abstract void setAccessory(Accessory accessory);
 	public abstract Accessory getAccesory();
 	
-	public abstract void setProdName();
-	public abstract void setImgSrc1();
-	public abstract void setImgSrc2();
-	public abstract void setImgSrc3();
-	public abstract void setImgSrc4();
-	public abstract void setPrice();
-	public abstract void setShortDesc();
-	public abstract void setDisplay();
-	public abstract void setCameras();
-	public abstract void setCpu();
-	public abstract void setRam();
-	public abstract void setSecMemory();
+	//one setter for database transaction
+	public abstract void setDetails();
+	
+	
 	
 	//getters for jsp UseBean
 	public abstract String getProdName();
+	public abstract String getBrand();
 	public abstract String getImgSrc1();
 	public abstract String getImgSrc2();
 	public abstract String getImgSrc3();

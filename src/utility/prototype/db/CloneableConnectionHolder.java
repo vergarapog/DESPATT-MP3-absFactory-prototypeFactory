@@ -7,13 +7,14 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class MyConnection implements CloneableConnection {
+//this class is a holder of a connection object, and this class can be cloned by implementing cloneable connection
+public class CloneableConnectionHolder implements CloneableConnection {
 		
 	private final Connection connection = this.getConnection();
 	
 	@Override
     public CloneableConnection clone() {
-        return new MyConnection();
+        return new CloneableConnectionHolder();
     }
 	
 	

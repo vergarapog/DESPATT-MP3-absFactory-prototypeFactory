@@ -20,6 +20,16 @@
     <url-pattern>/processproduct.action</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>SearchProductServlet</servlet-name>
+    <servlet-class>controller.SearchProductServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>SearchProductServlet</servlet-name>
+    <url-pattern>/searchproduct.action</url-pattern>
+  </servlet-mapping>
+  
   
   
   

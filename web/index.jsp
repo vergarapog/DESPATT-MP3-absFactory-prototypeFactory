@@ -25,26 +25,26 @@
                  <a href="prodna.jsp">  <img  src="images/web-logo-final2.png" alt="logo" height="150" width="50" class="logo"></a>
             </header>
 <div class="form-containertop">
-            <h1><span>AddtoCart's</span>Platinum Loyalty Rewards</h1>
+            <h1><span>AddtoCart's</span>Smartphone Bundles</h1>
   </div>
 <div class="form-containertop">
-            <p>As a 5 year AddtoCart Loyalty Platinum member, your next free ultimate mobile upgrade is on us! Browse below the best smartphones for our best customer! We also made it easy to quick-buy your phone, just type your preferred brand below!</p>
+            <p>All phone purchases are supplied with an accessory from their respective brands - for free!</p>
 </div>
             <div class="form-container">
-                <form action="processproduct.action" method="post">
+                <form action="searchproduct.action" method="post">
                     <div class="form-left">
-                        <label for="city">Claim your reward:</label>
+                        <label for="city">Search:</label>
                         <input type="text" name="prodName" id="prodName" required>
-                        <p>Example: "Apple", "Samsung", "Xiaomi"</p>
+                        <p>Example: "Search "5G" to display all 5G capable phones"</p>
                     </div>
 
-                    <input type="submit" value="Claim" id="cta-btn">
+                    <input type="submit" value="Search" id="cta-btn">
                 </form>
             </div>
         </section>
     </div>
     <br>
-    <h1 class = "breaker"><span> Available Rewards</span></h1>
+    <h1 class = "breaker"><span>Phones</span></h1>
     
     
     
@@ -58,22 +58,22 @@
         <div class="apple">
         <img src="images/apple2.png" alt="">
         <h3> Apple </h3>
-       <p>Claim Apple's Flagship, the iPhone 12 Pro Max</p>
-       <p>Type "Apple" on the field bar above to claim</p>
+       <p>Apple's Flagship, the iPhone 12 Pro Max</p>
+       
         </div>
         
         <div class="samsung">
         <img src="images/samsung3.png" alt="" >
        <h3> Samsung </h3>
-       <p>Claim Samsung's Flagship, the Galaxy S21 Ultra</p>
-       <p>Type "Samsung" on the field bar above to claim</p>
+       <p>Samsung's Flagship, the Galaxy S21 Ultra</p>
+     
        </div>
        
        <div class="xiaomi">
         <img src="images/xiaomi2.png" alt="" class="xiaomi">
         <h3> Xiaomi </h3>
-       <p>Claim Xiaomi's Flagship, the MI 10T Ultra</p>
-       <p>Type "Xiaomi" on the field bar above to claim</p>
+       <p> Xiaomi's Flagship, the MI 10T Ultra</p>
+       
         </div>
         
         
@@ -91,21 +91,24 @@
         <div class="apple">
         <img src="images/accessories/apple/appleaccs.jpg" alt="airpods">
         <h3> Apple Airpods Pro </h3>
-       <p>Included in every redemption of Apple's flagship</p>
+       <p>Included in every purchase of Apple's flagship</p>
        
         </div>
         
         <div class="samsung">
         <img src="images/accessories/samsung/samsungaccs2.jpg" alt="galaxy buds" >
        <h3> Galaxy Buds </h3>
-       <p>Included in every redemption of Samsung's flagship</p>
+       <p>Included in every purchase of Samsung's flagship</p>
        
        </div>
        
        <div class="xiaomi">
         <img src="images/accessories/xiaomi/xiaomiaccs.jpg" alt="free buds" class="xiaomi">
         <h3> Free Buds </h3>
-       <p>Included in every redemption of Xiaomi's flagship</p>
+       <p>Included in every purchase of Xiaomi's flagship</p>
+       
+        </div>
+        
        
         </div>
     </section>

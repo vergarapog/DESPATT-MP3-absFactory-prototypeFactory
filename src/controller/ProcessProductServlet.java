@@ -35,7 +35,8 @@ public class ProcessProductServlet extends HttpServlet {
 			
 			
 			
-			// if requested product doesn't exist, redirects to error page
+			//this servlet can now only be accessed by clicking the purchase button in search.jsp after searching 
+			//of products from the database table in model SearchResult Class
 			if(requested.equalsIgnoreCase("APPLE") || requested.equalsIgnoreCase("SAMSUNG") || requested.equalsIgnoreCase("XIAOMI")) {
 				
 				Product product = new ProductFactory().getProduct(requested.toUpperCase());

@@ -14,6 +14,7 @@ public abstract class Product implements Serializable {
 	protected String imgSrc3;
 	protected String imgSrc4;
 	protected double price;
+	protected int stockQty;
 	
 	protected String shortDesc;
 	

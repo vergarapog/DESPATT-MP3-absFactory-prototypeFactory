@@ -16,6 +16,7 @@ public interface DBOps {
 			" `imgSrc3` varchar(90) NOT NULL,\r\n" + 
 			" `imgSrc4` varchar(90) NOT NULL,\r\n" + 
 			" `price` double NOT NULL,\r\n" + 
+			" `stockQty` int NOT NULL,\r\n" + 
 			" `shortDesc` varchar(800) NOT NULL,\r\n" + 
 			" `display` varchar(255) NOT NULL,\r\n" + 
 			" `cameras` varchar(255) NOT NULL,\r\n" + 
@@ -30,6 +31,7 @@ public interface DBOps {
 			" `prodName` varchar(80) NOT NULL,\r\n" + 
 			" `brandName` varchar(80) NOT NULL,\r\n" + 
 			" `price` double NOT NULL,\r\n" + 
+			" `stockQty` int NOT NULL,\r\n" + 
 			" `imgSrc1` varchar(80) NOT NULL,\r\n" + 
 			" PRIMARY KEY (`id`)\r\n" + 
 			") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
@@ -53,6 +55,7 @@ public interface DBOps {
 			"    imgSrc3,\r\n" + 
 			"    imgSrc4,\r\n" + 
 			"    price,\r\n" + 
+			"    stockQty,\r\n" + 
 			"    shortDesc,\r\n" + 
 			"    display,\r\n" + 
 			"    cameras,\r\n" + 
@@ -69,6 +72,7 @@ public interface DBOps {
 			"    'images/apple/apple3.jpg', \r\n" + 
 			"    'images/apple/apple4.jpg',\r\n" + 
 			"    70000,\r\n" + 
+			"    100,\r\n" + 
 			"    '5G goes Pro. A14 Bionic rockets past every other smartphone chip. The Pro camera system takes low-light photography to the next level, with an even bigger jump on iPhone 12 Pro Max. And Ceramic Shield delivers four times better drop performance.',\r\n" + 
 			"    'Super Retina Display XDR 60Hz',\r\n" + 
 			"    '16mp Ultrawide Lens 12mp Main Lens 16mp Zoom Lens',\r\n" + 
@@ -84,6 +88,7 @@ public interface DBOps {
 			"    'images/samsung/samsung3.jpg', \r\n" + 
 			"    'images/samsung/samsung4.jpg',\r\n" + 
 			"    80000,\r\n" + 
+			"    100,\r\n" + 
 			"    'Introducing Galaxy S21 Ultra 5G. Designed with a unique contour-cut camera to create a revolution in photography, letting you capture cinematic 8K video and snap epic stills, all in one go. And with the fastest Galaxy chip, strongest glass, 5G and an all-day battery, Ultra easily lives up to its name.',\r\n" + 
 			"    'Samsung AMOLED 120Hz',\r\n" + 
 			"    '16mp Ultrawide Lens, 108mp Main Lens, 64mp Zoom Lens',\r\n" + 
@@ -99,6 +104,7 @@ public interface DBOps {
 			"    'images/xiaomi/xiaomi3.jpg', \r\n" + 
 			"    'images/xiaomi/xiaomi4.jpg',\r\n" + 
 			"    55000,\r\n" + 
+			"    100,\r\n" + 
 			"    'The Mi 10T Ultra series sets the benchmark for next-generation performance.\\r\\n\" + \r\n" + 
 			"				\"Experience extreme power and efficiency with the latest LPDDR5 RAM and UFS 3.0 ROM technology, powered by the Qualcomm® Snapdragon 865 platform.\\r\\n\" + \r\n" + 
 			"				\"Whether at work or play, expect to have your expectations surpassed.',\r\n" + 
@@ -109,21 +115,24 @@ public interface DBOps {
 			"    '256gb Memory'\r\n" + 
 			")";
 	
-	String ALL_ACCESSORIES = "INSERT INTO accessory(`prodName`, `brandName`, `price`, `imgSrc1`)\r\n" + 
+	String ALL_ACCESSORIES = "INSERT INTO accessory(`prodName`, `brandName`, `price`, `stockQty`, `imgSrc1`)\r\n" + 
 			"VALUES(\r\n" + 
 			"    'Apple Airpods Pro',\r\n" + 
 			"    'apple',\r\n" + 
 			"    '15000',\r\n" + 
+			"    100,\r\n" + 
 			"    'images/accessories/apple/appleaccs.jpg'\r\n" + 
 			"), (\r\n" + 
 			"	'Samsung Galaxy Buds',\r\n" + 
 			"    'samsung',\r\n" + 
 			"    '10000',\r\n" + 
+			"    100,\r\n" + 
 			"    'images/accessories/samsung/samsungaccs2.jpg'\r\n" + 
 			"), (\r\n" + 
 			"	'Xiaomi Free Buds',\r\n" + 
 			"    'xiaomi',\r\n" + 
 			"    '5000',\r\n" + 
+			"    100,\r\n" + 
 			"    'images/accessories/xiaomi/xiaomiaccs.jpg\'\r\n" + 
 			")";
 	

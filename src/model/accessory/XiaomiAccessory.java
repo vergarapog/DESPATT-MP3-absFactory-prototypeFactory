@@ -38,7 +38,8 @@ private Connection getClonedConnection() {
 		try {
 			while(rs.next()) {
 				this.prodName = rs.getString(2);
-				this.imgSrc1 = rs.getString(5);
+				this.stockQty = rs.getInt(5);
+				this.imgSrc1 = rs.getString(6);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -59,6 +60,12 @@ private Connection getClonedConnection() {
 	public String getAccsImgSrc1() {
 		// TODO Auto-generated method stub
 		return imgSrc1;
+	}
+	
+	@Override
+	public int stockQty() {
+		// TODO Auto-generated method stub
+		return stockQty;
 	}
 
 

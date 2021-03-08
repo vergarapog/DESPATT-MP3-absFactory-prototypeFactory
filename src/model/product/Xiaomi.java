@@ -54,12 +54,13 @@ private Connection getClonedConnection() {
 				this.imgSrc3 = rs.getString(7);
 				this.imgSrc4 = rs.getString(8);
 				this.price = rs.getDouble(9);
-				this.shortDesc = rs.getString(10);
-				this.display = rs.getString(11);
-				this.cameras = rs.getString(12);
-				this.cpu = rs.getString(13);
-				this.ram = rs.getString(14);
-				this.secMemory = rs.getString(15);
+				this.stockQty = rs.getInt(10);
+				this.shortDesc = rs.getString(11);
+				this.display = rs.getString(12);
+				this.cameras = rs.getString(13);
+				this.cpu = rs.getString(14);
+				this.ram = rs.getString(15);
+				this.secMemory = rs.getString(16);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

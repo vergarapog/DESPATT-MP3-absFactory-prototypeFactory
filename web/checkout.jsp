@@ -8,12 +8,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Product not available</title>
+<title>Checkout</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/7dabdac481.js" crossorigin="anonymous"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="font-family: 'Montserrat', sans-serif;">
 <nav class="navbar navbar-light " style="background-color: #f2f2f2">
@@ -34,6 +34,7 @@
                 </form>
                 
 </nav>
+
 	<br><br><br><br><br>
 	<%
 		//declare local variables
@@ -46,23 +47,51 @@
 
 				<div class="card-body">
 
-				<h3 class="card-title">Product not available.....yet!</h3>
+				<h4 class="card-title">Mode of payment: <b><u>Credit Card</u></b></h4>
 				
 				<div class="col-12">
 					
 <hr>
 				
-					<div class="row">
-					<p class="text-info" style="font-weight: bold">Stay tuned our loyal customer! Keep on checking AddtoCart's main website for more product announcements!</p>
-					</div>
+					
+<form style="padding-bottom: 30px; " method="post" action="checkout.action">
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
+      <input name="name" type="text" class="form-control"  required >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Credit card number:</label>
+    <div class="col-sm-10">
+      <input name="ccNum" type="text" class="form-control creditCardText"  pattern=".{19,}" minlength="19" maxlength="19"  required >
+    </div>
+  </div>
+
+
+
+
 					<br>
-					<a href="index.jsp" class="btn btn-primary" style="margin-left: -1em;">Try again</a>
+					
+					<button type="submit" class="btn btn-primary">
+					    	Purchase
+					</button>
 						
 					</div>
 				 </div>
 			</div>
 		</div>
 		<br><br><br><br><br><br><br><br><br><br>
+		
+ <script>
+ $('.creditCardText').keyup(function() {
+  var foo = $(this).val().split("-").join(""); // remove hyphens
+  if (foo.length > 0) {
+    foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+  }
+  $(this).val(foo);
+});
+</script>
 </body>
 
 

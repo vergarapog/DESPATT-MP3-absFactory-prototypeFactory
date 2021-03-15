@@ -11,6 +11,7 @@
 <title>Search Results</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/7dabdac481.js" crossorigin="anonymous"></script>
 <style>
 input[type=submit] {
     background-color: #F89104;
@@ -22,6 +23,7 @@ input[type=submit] {
     font-size: 1em;
     cursor: pointer;
 }
+
 </style>
 </head>
 <body style="font-family: 'Montserrat', sans-serif;">
@@ -30,6 +32,16 @@ input[type=submit] {
     <img src="images/web-logo-final5.png" width="130" height="60" class="d-inline-block align-top" alt="" style="margin-left: 10em;">
     
   </a>
+    <form action="cart.jsp" method="post" style="margin-right: 200px">
+                    <div class="form-left">
+                      
+                    </div>
+  						
+                    
+                    <button type="submit" class="btn btn-warning">
+					    	<i  class="fas fa-shopping-cart fa-2x"></i> Open Cart
+					</button>
+                </form>
 </nav>
 	<br><br><br><br><br>
 	

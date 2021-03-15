@@ -5,6 +5,7 @@ import utility.*;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +33,9 @@ public class ProcessProductServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				
 			String requested = request.getParameter("prodName");
+			
+			
+			
 			
 			
 			

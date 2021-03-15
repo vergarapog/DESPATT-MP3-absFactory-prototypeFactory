@@ -116,7 +116,7 @@ public class SearchResults implements DBOps {
 					"\r\n" + 
 					" <input type=\"hidden\" name=\"prodName\" value="+ prod.getBrand()+" />" +
 					"<br>" +
-					"                    <input type=\"submit\" value=\"Purchase\" id=\"cta-btn\">\r\n" + 
+					"                    <input type=\"submit\" value=\"See Details\" id=\"cta-btn\">\r\n" + 
 					"                </form>" +
 					"					</div>\r\n" + 
 					"				 </div>\r\n" + 

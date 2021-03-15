@@ -30,6 +30,36 @@
     <url-pattern>/searchproduct.action</url-pattern>
   </servlet-mapping>
   
+    <servlet>
+    <servlet-name>AddtoCartServlet</servlet-name>
+    <servlet-class>controller.AddtoCartServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>AddtoCartServlet</servlet-name>
+    <url-pattern>/addtocart.action</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>RemovefromCartServlet</servlet-name>
+    <servlet-class>controller.RemovefromCartServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>RemovefromCartServlet</servlet-name>
+    <url-pattern>/removefromcart.action</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <servlet-class>controller.CheckoutServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>CheckoutServlet</servlet-name>
+    <url-pattern>/checkout.action</url-pattern>
+  </servlet-mapping>
+  
   
   
   

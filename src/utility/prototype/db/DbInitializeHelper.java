@@ -28,7 +28,7 @@ public class DbInitializeHelper implements DBOps {
 			PreparedStatement pstmt = con.prepareStatement(CREATE_TABLE_PRODUCT);
 			pstmt.executeUpdate();
 			
-			System.out.println("Table created 1");
+			System.out.println("Table created product");
 			
 		} catch(Exception e) {
 			System.out.println(e);
@@ -41,7 +41,20 @@ public class DbInitializeHelper implements DBOps {
 			pstmt.executeUpdate();
 			
 			
-			System.out.println("Table created 2");
+			System.out.println("Table created accessory");
+			
+		} catch(Exception e) {
+			System.out.println(e);
+		}
+		
+		try {
+			Connection con = this.getClonedConnection();
+			
+			PreparedStatement pstmt = con.prepareStatement(CREATE_TABLE_ORDER);
+			pstmt.executeUpdate();
+			
+			
+			System.out.println("Table created orders");
 			
 		} catch(Exception e) {
 			System.out.println(e);

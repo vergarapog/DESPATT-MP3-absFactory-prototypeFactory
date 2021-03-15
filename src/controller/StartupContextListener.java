@@ -3,6 +3,7 @@ package controller;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
 
 import utility.prototype.db.*;
 
@@ -15,6 +16,7 @@ public class StartupContextListener implements ServletContextListener {
 
 	DbInitializeHelper db = new DbInitializeHelper();//db helper for creating and populating tables
 	
+	
     public void contextInitialized(ServletContextEvent arg0)  { 
     	   	
     	
@@ -22,6 +24,9 @@ public class StartupContextListener implements ServletContextListener {
     	
     	db.populateProducts();
     	db.populateAccessories();
+    	
+    	
+    	
     	
     	
     }

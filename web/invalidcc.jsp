@@ -22,17 +22,7 @@
     
   </a>
   
-  <form action="cart.jsp" method="post" style="margin-right: 200px">
-                    <div class="form-left">
-                      
-                    </div>
-  						
-                    
-                    <button type="submit" class="btn btn-warning">
-					    	<i  class="fas fa-shopping-cart fa-2x"></i> Open Cart
-					</button>
-                </form>
-                
+  
 </nav>
 	<br><br><br><br><br>
 	<%
@@ -46,14 +36,14 @@
 
 				<div class="card-body">
 
-				<h3 class="card-title">Product not available.....yet!</h3>
+				<h3 class="card-title">Invalid Credit Card Number!</h3>
 				
 				<div class="col-12">
 					
 <hr>
 				
 					<div class="row">
-					<p class="text-info" style="font-weight: bold">Stay tuned our loyal customer! Keep on checking AddtoCart's main website for more product announcements!</p>
+					<p class="text-info" style="font-weight: bold">Click the button below to try again.</p>
 					</div>
 					<br>
 					<a href="index.jsp" class="btn btn-primary" style="margin-left: -1em;">Try again</a>

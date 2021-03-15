@@ -128,6 +128,12 @@ public class Samsung extends Product implements DBOps{
 		// TODO Auto-generated method stub
 		return price;
 	}
+	
+	@Override
+	public int getStockQty() {
+		// TODO Auto-generated method stub
+		return stockQty;
+	}
 
 	@Override
 	public String getShortDesc() {

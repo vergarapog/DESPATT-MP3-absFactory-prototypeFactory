@@ -9,8 +9,15 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+function confirmInput() {
+  
+  alert("Product successfully added to cart.");
+}
+</script>
 <link rel="stylesheet" href="css/details.css">
 <link rel="stylesheet" href="css/footer.css">
+<script src="https://kit.fontawesome.com/7dabdac481.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -20,10 +27,15 @@
     <img src="images/web-logo-final5.png" width="130" height="60" class="d-inline-block align-top" alt="" style="margin-left: 10em;">
     
   </a>
+
 </nav>
 
+  
+
 <div class="container-fluid">
+ 
     <div class="content-wrapper">	
+
 		<div class="item-container">	
 			<div class="container">	
 				<div class="col-md-12">
@@ -50,17 +62,27 @@
 				</div>
 					
 				<div class="col-md-7">
-					<div class="product-title"><jsp:getProperty name="prod" property="prodName"/></div>
-					<br>
-					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> </div>
+					<div class="product-title"><jsp:getProperty name="prod" property="prodName"/></div>  
+					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> </div>    
+					<form action="cart.jsp" method="post" style="margin-left: 350px">
+                    
+  						
+                    
+                    <button type="submit" class="btn btn-warning">
+					    	<i  class="fas fa-shopping-cart fa-2x"></i> Open Cart
+					</button>
+                </form>
+					
+					
 					<hr>
-					<div class="product-price"> P <jsp:getProperty name="prod" property="price"/></div>
+					<div class="product-price"> P <jsp:getProperty name="prod" property="price"/> <br> <p class="lead"> Stock: <jsp:getProperty name="prod" property="stockQty"/> </p></div>
 					
 					<hr>
 					<div class="btn-group cart">
-					<form action="claimsuccess.jsp" method="post">
+					<form onsubmit="confirmInput()" action="addtocart.action" method="post">
+					<input type="hidden" name="brand" id="brand" value="<jsp:getProperty name="prod" property="brand"/>">
 						<button type="submit" class="btn btn-success">
-							Purchase
+							Add to Cart
 						</button>
 						</form>
 					</div>

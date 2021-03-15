@@ -128,6 +128,12 @@ private Connection getClonedConnection() {
 		// TODO Auto-generated method stub
 		return price;
 	}
+	
+	@Override
+	public int getStockQty() {
+		// TODO Auto-generated method stub
+		return stockQty;
+	}
 
 	@Override
 	public String getShortDesc() {
@@ -170,5 +176,7 @@ private Connection getClonedConnection() {
 		// TODO Auto-generated method stub
 		return brand;
 	}
+	
+	
 
 }

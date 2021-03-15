@@ -13,6 +13,7 @@
 
 <link rel = "stylesheet" href = "css/indexDesign.css">
 <link rel="stylesheet" href="css/footer.css">
+<script src="https://kit.fontawesome.com/7dabdac481.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -22,8 +23,22 @@
     <div class="hero-bg">
         <section class="top">
             <header>
-                 <a href="prodna.jsp">  <img  src="images/web-logo-final2.png" alt="logo" height="150" width="50" class="logo"></a>
+            
+                 <a  href="index.jsp">  <img  src="images/web-logo-final2.png" alt="logo" height="150" width="50" class="logo"></a>
+                 
+                 
             </header>
+    
+           <form action="cart.jsp" method="post" class="shopCart">
+                    <div class="form-left">
+                      
+                    </div>
+  						
+                    
+                    <button type="submit" class="btn btn-warning">
+					    	<i  class="fas fa-shopping-cart fa-2x"></i> Open Cart
+					</button>
+                </form>
 <div class="form-containertop">
             <h1><span>AddtoCart's</span>Smartphone Bundles</h1>
   </div>

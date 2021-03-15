@@ -2,8 +2,10 @@ package utility.prototype.db;
 
 public interface DBOps {
 	
-	String INSERT_RECORD = "insert into vehiclecoding (busName, plateNumber, "
-			+ "driver, codingDayAssigned) values (?,?,?,?)";
+	String INSERT_ORDER = "insert into orders (customerName, qty, "
+			+ "totalPrice, ccNum) values (?,?,?,?)";
+	
+	String DEDUCT_QTY ="Update product set stockQty = stockQty - 1 WHERE brandName = ?";
 	
 	
 	String CREATE_TABLE_PRODUCT = "CREATE TABLE IF NOT EXISTS `product` (\r\n" + 
@@ -36,13 +38,24 @@ public interface DBOps {
 			" PRIMARY KEY (`id`)\r\n" + 
 			") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 	
-	String DELETE_DB = "DROP TABLE IF EXISTS product, accessory";
+	String CREATE_TABLE_ORDER ="CREATE TABLE IF NOT EXISTS `orders` (\r\n" + 
+			" `id` int(11) NOT NULL AUTO_INCREMENT,\r\n" + 
+			" `customerName` varchar(88) NOT NULL,\r\n" + 
+			" `qty` int(11) NOT NULL,\r\n" + 
+			" `totalPrice` double NOT NULL,\r\n" + 
+			" `ccNum` varchar(88) NOT NULL,\r\n" + 
+			" PRIMARY KEY (`id`)\r\n" + 
+			") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4\r\n" + 
+			"";
+	
+	String DELETE_DB = "DROP TABLE IF EXISTS product, accessory, orders";
 	
 	String SEARCH = "SELECT brandName FROM product WHERE prodName LIKE ? OR shortDesc LIKE ?";
 	
 	String GET_PRODUCT = "SELECT * FROM product WHERE prodName LIKE ?";
 	
 	String GET_ACCESSORY = "SELECT * FROM accessory WHERE prodName LIKE ?";
+	
 	
 	// I could have done the insertion below better by using the factories or getting them from a text file, but I found 
 	//another use for the factories, I hope this would do for now

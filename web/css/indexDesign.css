@@ -6,6 +6,10 @@
     --leading: 2em;
 }
 
+.shopCart{
+	margin-top: -110px;
+}
+
 .breaker{
 	text-align: center;
 	margin: 1.6em;
